@@ -13,7 +13,7 @@ let appColor: UIColor = .systemTeal
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let loginViewController = LoginViewController()
+//    let loginViewController = LoginViewController()
     let onboardingViewController = OnboardingContainerViewController()
     let mainViewController = MainViewController()
         
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         
-        loginViewController.delegate = self
+//        loginViewController.delegate = self
         onboardingViewController.delegate = self
         
         registerForNotifications()
@@ -37,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func displayLogin() {
-        setRootViewController(loginViewController)
+//        setRootViewController(loginViewController)
+        setRootViewController(onboardingViewController)
     }
     
     private func displayNextScreen() {
@@ -90,6 +91,7 @@ extension AppDelegate: OnboardingContainerViewControllerDelegate {
 
 extension AppDelegate: LogoutDelegate {
     @objc func didLogout() {
-        setRootViewController(loginViewController)
+//        setRootViewController(loginViewController)
+        setRootViewController(onboardingViewController)
     }
 }
